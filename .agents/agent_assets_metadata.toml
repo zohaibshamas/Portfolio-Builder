@@ -1,0 +1,26 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "jfSkxSv50S4uyIiKxTxyJ"
+uri = "file://artifacts/portfolio/public/images/profile.png"
+type = "image"
+title = "Creative developer profile avatar"
+
+[[generated]]
+id = "T0tNHvlb6NmTvw8QpVRqA"
+uri = "file://artifacts/portfolio/public/images/project-1.png"
+type = "image"
+title = "Modern web application project"
+
+[[generated]]
+id = "pVf22ffQS-_k4e8GRRhW0"
+uri = "file://artifacts/portfolio/public/images/project-2.png"
+type = "image"
+title = "E-commerce platform project"
+
+[[generated]]
+id = "7BVDf3nh8TvmZfLuxyO2p"
+uri = "file://artifacts/portfolio/public/images/project-3.png"
+type = "image"
+title = "Data visualization dashboard"
