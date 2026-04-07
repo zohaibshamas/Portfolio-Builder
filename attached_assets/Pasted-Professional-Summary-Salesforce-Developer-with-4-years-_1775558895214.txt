@@ -1,0 +1,167 @@
+Professional Summary 
+
+ 
+
+Salesforce Developer with 4+ years of experience in designing and implementing CRM solutions 
+
+Hands-on experience across Sales, Service, and Experience Cloud 
+
+Strong expertise in Apex, Lightning Web Components (LWC), SOQL, and JavaScript 
+
+Experienced in integrating Salesforce with external systems using REST APIs and SAP 
+
+Extensive experience in Sales Cloud, including lead-to-order lifecycle, opportunity management, partner collaboration, and sales process automation 
+
+Strong expertise in Service Cloud, covering case management, SLA and escalation processes, omni-channel support, and customer service automation 
+
+Skilled in building scalable and maintainable solutions using Apex Triggers and handler frameworks 
+
+Proficient in automating business processes using Flows, Process Builder, and custom logic 
+
+Experience in developing dynamic and user-friendly UI using LWC and Aura Components 
+
+Strong understanding of Salesforce data model, security model, and sharing mechanisms 
+
+Experience in data migration, data transformation, and maintaining data integrity 
+
+Skilled in writing test classes, mock callouts, and achieving high code coverage 
+
+Experience in debugging, troubleshooting, and optimizing system performance 
+
+Strong knowledge of deployment processes using change sets and best practices 
+
+Experience in working with cross-functional teams and translating business requirements into technical solutions 
+
+Good understanding of Agile methodology and iterative development processes 
+
+Strong analytical, problem-solving, and communication skills 
+
+ 
+
+ 
+
+ 
+
+Technologies & Skill  
+
+ 
+
+Languages/Tools/Technologies: Visualforce Pages, Lightning Web Components, Aura Components, Apex, SOQL, SFDX, Visual Studio Code, JavaScript, HTML, CSS.   
+
+DevOps: Git  
+
+Clouds: Sales, Service and Experience 
+
+Projects: 
+
+ 
+
+HONDA CRM Project: Salesforce CRM, Sales Cloud implementation   
+
+  
+
+Designed and implemented the Salesforce Partner Community for Honda, enabling seamless collaboration between Honda and its dealer network, enhancing visibility into sales, leads, and opportunities. 
+
+Configured and customized Sales Cloud to streamline sales processes, automate workflows, and improve overall sales cycle efficiency for both Honda sales teams and their partners. 
+
+Developed and deployed custom Lightning Web Components for partner users, ensuring an intuitive and responsive user interface for sales performance tracking, reporting, and account management. 
+
+Integrated Salesforce with Honda’s existing SAP systems, ensuring real-time data sync, improved data accuracy, and enhancing the experience for dealers interacting through the partner portal. 
+
+Configured Sharing Rules to ensure partner access to relevant data while maintaining security, ensuring the right stakeholders have appropriate access. 
+
+Developed custom order creation interfaces using Lightning Web Components (LWC), streamlining the order entry process and enhancing the user experience with a dynamic and responsive UI. 
+
+ 
+
+Sapphire Retail Limited CRM Project: Salesforce CRM, Service Cloud implementation 
+
+ 
+
+Designed and customized core Service Cloud objects (Accounts, Contacts, Cases) to support customer service operations and issue resolution workflows. 
+
+Implemented bi-directional customer data synchronization between Salesforce and Commerce Cloud, ensuring real-time updates and consistent customer records. 
+
+Configured Email-to-Case and Web-to-Case, enabling automated case creation from multiple customer channels. 
+
+Developed store credit integration logic, enabling seamless tracking and updates between systems. 
+
+Built and consumed REST APIs for external integrations, handling data exchanges securely and efficiently. 
+
+Implemented Order Management System (OMS) flows including: 
+
+Order Cancellation 
+
+Item Exchange 
+
+Order Returns 
+
+Developed and configured Case Assignment Rules and Escalation Rules, improving SLA adherence and ensuring timely response and resolution of customer queries. 
+
+Designed and implemented Customer Segmentation logic, enabling targeted engagement strategies. 
+
+Created Approval Processes to enforce business validations and structured decision-making. 
+
+Led legacy data migration, ensuring data accuracy, transformation, and validation during transition. 
+
+Developed Apex Triggers with handler framework, ensuring scalable and maintainable automation. 
+
+Wrote test classes with mock callouts, achieving required coverage, and ensuring reliable deployments. 
+
+Enhanced security model using profiles, permission sets, and sharing rules. 
+
+ 
+
+Associated Press Experience Cloud Implementation  
+
+Implemented a Self-Service Portal using Experience Cloud, enabling users to manage cases and access knowledge articles independently. 
+
+Developed custom Lightning components for: 
+
+Case creation 
+
+User self-registration 
+
+Knowledge article management 
+
+Configured role hierarchy, profiles, and sharing settings to ensure secure and structured access. 
+
+Performed QA testing across multiple sandbox environments, ensuring stability and quality before production deployment. 
+
+Managed deployments using change sets, ensuring smooth release cycles. 
+
+ 
+
+Loangility CRM Project: Salesforce CRM, Sales Cloud implementation  
+
+  
+
+Designed and developed reports and dashboards, enabling business stakeholders to gain actionable insights. 
+
+Worked extensively with standard and custom objects including Leads, Opportunities, Accounts, and Cases. 
+
+Automated business processes using Apex Triggers and handler classes, improving system efficiency. 
+
+Performed unit testing and end-to-end testing, ensuring high-quality and stable deployments. 
+
+Customized UI and data model including page layouts, fields, and business processes. 
+
+Strengthened data security and access control using profiles, permission sets, and sharing configurations. 
+
+ 
+
+  
+
+Certification  
+
+Salesforce Administrator  
+
+Salesforce Platform Developer 1  
+
+Salesforce Sales Cloud Consultant 
+
+Salesforce Associate AI 
+
+Salesforce B2C Commerce Developer  
+
+  

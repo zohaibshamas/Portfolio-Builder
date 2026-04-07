@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-import { ArrowRight, Github, Linkedin, Mail, Cloud, Code2, Database, GitBranch, Layers, Settings2, Award, MapPin, ExternalLink } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Mail, Cloud, Code2, Database, GitBranch, Layers, Settings2, Award, MapPin, ExternalLink, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -9,97 +9,142 @@ const NAV_LINKS = [
   { name: "About", href: "about" },
   { name: "Skills", href: "skills" },
   { name: "Projects", href: "projects" },
-  { name: "Experience", href: "experience" },
+  { name: "Certifications", href: "certifications" },
   { name: "Contact", href: "contact" },
 ];
 
 const CERTIFICATIONS = [
-  "Salesforce Certified Administrator",
+  "Salesforce Administrator",
   "Platform Developer I",
-  "Platform Developer II",
   "Sales Cloud Consultant",
-  "Service Cloud Consultant",
+  "Associate AI",
+  "B2C Commerce Developer",
+];
+
+const SUMMARY_POINTS = [
+  "4+ years designing and implementing Salesforce CRM solutions",
+  "Hands-on across Sales Cloud, Service Cloud, and Experience Cloud",
+  "Expert in Apex, LWC, Aura Components, SOQL, and JavaScript",
+  "Salesforce integrations via REST APIs and SAP",
+  "Lead-to-order lifecycle, opportunity management, and sales automation",
+  "Case management, SLA/escalation, and omni-channel Service Cloud support",
+  "Apex Triggers with handler frameworks for scalable automation",
+  "Flows, Process Builder, and declarative automation",
+  "Data migration, transformation, and integrity management",
+  "Test classes with mock callouts and high code coverage",
+  "Deployment using change sets and Salesforce DX best practices",
+  "Agile methodology and cross-functional team collaboration",
 ];
 
 const SKILLS = [
   {
     icon: Code2,
-    title: "Apex Development",
-    description: "Writing clean, bulkified Apex classes, triggers, and asynchronous patterns — Batch, Queueable, Future, and Scheduled jobs — following Salesforce best practices.",
+    title: "Apex & Backend",
+    tags: ["Apex", "Apex Triggers", "Handler Frameworks", "Test Classes", "Mock Callouts", "Async Apex"],
+    description: "Scalable, bulkified Apex development including triggers, batch jobs, and handler patterns. High code coverage with mock callout strategies.",
   },
   {
     icon: Layers,
-    title: "Lightning Web Components",
-    description: "Building modern, reusable LWC components and Aura components with seamless org integration, strong UX focus, and accessibility standards.",
+    title: "Lightning & UI",
+    tags: ["LWC", "Aura Components", "Visualforce", "JavaScript", "HTML", "CSS"],
+    description: "Dynamic, user-friendly UI with Lightning Web Components and Aura. Responsive, accessible interfaces for internal and partner/community users.",
   },
   {
     icon: GitBranch,
-    title: "Flows & Automation",
-    description: "Architecting complex business logic with Flow Builder, Process Builder, and Workflow Rules — reducing code where declarative tools do the job better.",
+    title: "Automation & Flows",
+    tags: ["Flow Builder", "Process Builder", "Workflow Rules", "Approval Processes", "Assignment Rules", "Escalation Rules"],
+    description: "Complex business process automation using declarative tools — reducing code where flows do the job, enforcing SLAs, and automating routing.",
   },
   {
     icon: Cloud,
     title: "Salesforce Clouds",
-    description: "Hands-on delivery across Sales Cloud, Service Cloud, Experience Cloud, and Marketing Cloud with deep knowledge of standard and custom object models.",
+    tags: ["Sales Cloud", "Service Cloud", "Experience Cloud"],
+    description: "Deep delivery experience across Sales, Service, and Experience Cloud — from partner communities to omni-channel service centers.",
   },
   {
     icon: Database,
-    title: "SOQL & Data Management",
-    description: "Writing optimized SOQL/SOSL queries, designing data models, managing data migrations, and integrating with Data Loader and third-party ETL tools.",
+    title: "Data & Security",
+    tags: ["SOQL", "SOSL", "Data Migration", "Profiles", "Permission Sets", "Sharing Rules", "Role Hierarchy"],
+    description: "Optimized queries, data migration, and integrity management. Security model expertise — profiles, permission sets, and sharing configurations.",
   },
   {
     icon: Settings2,
-    title: "Integrations & APIs",
-    description: "Building REST and SOAP API integrations, Named Credentials, Connected Apps, and middleware connectors — keeping Salesforce the single source of truth.",
+    title: "Integrations & DevOps",
+    tags: ["REST APIs", "SAP Integration", "Change Sets", "SFDX", "Git", "VS Code"],
+    description: "REST API integrations, SAP bi-directional sync, and Commerce Cloud data pipelines. Structured deployments using SFDX and change sets.",
   },
 ];
 
 const PROJECTS = [
   {
-    title: "Field Service Automation",
-    category: "Service Cloud",
-    description: "End-to-end automation of a field service workflow for a 500-technician enterprise. Built custom Apex scheduling engine, LWC dispatcher console, and automated SLA tracking — cutting average response time by 38%.",
+    title: "Honda CRM",
+    category: "Sales Cloud & Partner Community",
+    description:
+      "Designed and implemented the Salesforce Partner Community for Honda, enabling seamless collaboration between Honda and its dealer network. Built custom LWC components for sales performance tracking and reporting. Integrated Salesforce with Honda's SAP systems for real-time data sync and configured sharing rules for secure partner data access.",
     image: "/images/project-1.png",
-    tags: ["Apex", "LWC", "Service Cloud", "Flow"],
-    year: "2024",
+    tags: ["Sales Cloud", "Partner Community", "LWC", "SAP Integration", "Sharing Rules", "Apex"],
+    highlights: [
+      "Salesforce Partner Community for Honda dealer network",
+      "Custom LWC order creation interfaces",
+      "Real-time SAP integration for data accuracy",
+      "Configured sharing rules for structured partner access",
+    ],
+    year: "Project 1",
   },
   {
-    title: "Partner Portal Rebuild",
-    category: "Experience Cloud",
-    description: "Re-architected a legacy Visualforce partner portal into a modern Experience Cloud site with custom LWC components, role-based access, and real-time deal registration. Onboarded 200+ partners on launch day.",
+    title: "Sapphire Retail Limited",
+    category: "Service Cloud",
+    description:
+      "Full Service Cloud implementation for a retail CRM. Configured Email-to-Case and Web-to-Case for multi-channel case creation. Built REST APIs for Commerce Cloud bi-directional sync and implemented Order Management flows including cancellation, exchange, and returns. Led legacy data migration ensuring full data integrity.",
     image: "/images/project-2.png",
-    tags: ["Experience Cloud", "LWC", "Apex", "SOQL"],
-    year: "2023",
+    tags: ["Service Cloud", "REST APIs", "Commerce Cloud", "OMS Flows", "Apex Triggers", "Data Migration"],
+    highlights: [
+      "Email-to-Case and Web-to-Case automation",
+      "Bi-directional Commerce Cloud data sync",
+      "OMS flows: cancellations, exchanges, returns",
+      "Apex Triggers with handler framework",
+      "Led legacy data migration and validation",
+    ],
+    year: "Project 2",
   },
   {
-    title: "Revenue Intelligence Dashboard",
-    category: "Sales Cloud",
-    description: "Built a custom analytics layer on top of Sales Cloud using Apex REST services and Einstein Analytics — giving leadership a live pipeline view with forecast accuracy improved by 22%.",
+    title: "Associated Press Portal",
+    category: "Experience Cloud",
+    description:
+      "Implemented a Self-Service Portal using Experience Cloud, enabling users to manage cases and access knowledge articles independently. Developed custom Lightning components for case creation, self-registration, and knowledge management. Managed QA testing across multiple sandbox environments and deployments via change sets.",
     image: "/images/project-3.png",
-    tags: ["Sales Cloud", "Apex REST", "Einstein Analytics", "SOQL"],
-    year: "2023",
+    tags: ["Experience Cloud", "Self-Service Portal", "LWC", "Knowledge Management", "Change Sets", "QA"],
+    highlights: [
+      "Self-service portal with Knowledge article access",
+      "Custom LWC: case creation, self-registration",
+      "Role hierarchy, profiles, and sharing configuration",
+      "QA across multiple sandbox environments",
+    ],
+    year: "Project 3",
+  },
+  {
+    title: "Loangility CRM",
+    category: "Sales Cloud",
+    description:
+      "Designed and developed reports and dashboards for business stakeholder insights. Automated business processes using Apex Triggers and handler classes. Worked extensively with Leads, Opportunities, Accounts, and Cases. Strengthened data security and access control using profiles, permission sets, and sharing configurations.",
+    image: "/images/project-1.png",
+    tags: ["Sales Cloud", "Reports & Dashboards", "Apex Triggers", "Leads", "Opportunities", "Permission Sets"],
+    highlights: [
+      "Custom reports and dashboards for stakeholders",
+      "Apex Triggers with handler classes",
+      "Customized page layouts, fields, and business processes",
+      "Profiles, permission sets, and sharing configurations",
+    ],
+    year: "Project 4",
   },
 ];
 
-const EXPERIENCE = [
-  {
-    role: "Senior Salesforce Developer",
-    company: "Apex Solutions Group",
-    period: "2022 — Present",
-    description: "Technical lead for enterprise Salesforce implementations. Own architecture decisions, mentor a team of 4 developers, and drive cross-cloud delivery from scoping to go-live.",
-  },
-  {
-    role: "Salesforce Developer",
-    company: "CloudBridge Consulting",
-    period: "2019 — 2022",
-    description: "Delivered 12 Salesforce projects across Sales, Service, and Experience Cloud. Specialized in complex Apex integrations and LWC component libraries used across the firm.",
-  },
-  {
-    role: "Junior Salesforce Administrator",
-    company: "TechForce Systems",
-    period: "2017 — 2019",
-    description: "Managed org configuration, user administration, and declarative automation. Transitioned into development by building custom Apex triggers and Visualforce pages.",
-  },
+const CERT_DETAILS = [
+  { name: "Salesforce Administrator", icon: "⚙️" },
+  { name: "Salesforce Platform Developer I", icon: "💻" },
+  { name: "Salesforce Sales Cloud Consultant", icon: "📈" },
+  { name: "Salesforce Associate AI", icon: "🤖" },
+  { name: "Salesforce B2C Commerce Developer", icon: "🛍️" },
 ];
 
 function FadeIn({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
@@ -171,7 +216,6 @@ export default function Home() {
 
       {/* Hero */}
       <section id="hero" className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
-        {/* Background grid */}
         <div
           className="absolute inset-0 opacity-[0.04]"
           style={{
@@ -179,7 +223,6 @@ export default function Home() {
             backgroundSize: "60px 60px",
           }}
         />
-        {/* Glow orbs */}
         <div className="absolute top-1/4 left-1/4 w-[40vw] h-[40vw] rounded-full bg-primary/8 blur-[120px] pointer-events-none" />
         <div className="absolute bottom-1/4 right-1/4 w-[30vw] h-[30vw] rounded-full bg-primary/5 blur-[100px] pointer-events-none" />
 
@@ -192,7 +235,7 @@ export default function Home() {
             data-testid="hero-badge"
           >
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            Open to new Salesforce projects
+            4+ Years of Salesforce Development
           </motion.div>
 
           <motion.h1
@@ -213,7 +256,7 @@ export default function Home() {
             className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-12"
             data-testid="hero-subtext"
           >
-            I design and build scalable Salesforce solutions — from complex Apex architectures to polished Lightning Web Components — that help businesses move faster and smarter.
+            Specializing in Apex, Lightning Web Components, and cross-cloud implementations across Sales, Service, and Experience Cloud — turning complex business requirements into scalable Salesforce solutions.
           </motion.p>
 
           <motion.div
@@ -241,7 +284,6 @@ export default function Home() {
             </Button>
           </motion.div>
 
-          {/* Cert badges */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -264,20 +306,20 @@ export default function Home() {
 
       {/* About */}
       <section id="about" className="py-32 px-6 md:px-12 bg-secondary/40 border-t border-border/50">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-16 md:gap-24 items-center">
-          <div className="w-full md:w-5/12">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-16 md:gap-24 items-start">
+          <div className="w-full md:w-5/12 sticky top-24">
             <FadeIn>
               <div className="relative">
                 <div className="aspect-[4/5] overflow-hidden rounded-2xl">
                   <img
                     src="/images/profile.png"
-                    alt="Salesforce Developer portrait"
+                    alt="Salesforce Developer"
                     className="object-cover w-full h-full hover:scale-105 transition-transform duration-700"
                     data-testid="img-profile"
                   />
                 </div>
                 <div className="absolute -bottom-5 -right-5 bg-primary text-primary-foreground rounded-2xl px-5 py-4 shadow-xl">
-                  <p className="text-3xl font-bold font-serif leading-none">7+</p>
+                  <p className="text-3xl font-bold font-serif leading-none">4+</p>
                   <p className="text-xs font-medium opacity-90 mt-1">Years Salesforce</p>
                 </div>
               </div>
@@ -288,32 +330,28 @@ export default function Home() {
             <FadeIn>
               <div className="flex items-center gap-3 mb-6">
                 <div className="h-px bg-primary w-10" />
-                <span className="text-primary text-xs font-semibold uppercase tracking-widest">About Me</span>
+                <span className="text-primary text-xs font-semibold uppercase tracking-widest">Professional Summary</span>
               </div>
               <h2 className="text-4xl md:text-5xl font-serif font-bold mb-8 leading-tight">
-                I turn Salesforce into a<br />
-                <span className="text-primary">competitive advantage.</span>
+                Turning business requirements into<br />
+                <span className="text-primary">scalable Salesforce solutions.</span>
               </h2>
             </FadeIn>
+            <FadeIn delay={0.1}>
+              <p className="text-muted-foreground text-lg leading-relaxed mb-10">
+                Salesforce Developer with 4+ years of experience designing and implementing CRM solutions. Strong hands-on expertise across Sales Cloud, Service Cloud, and Experience Cloud — from lead-to-order automation to self-service portals and REST API integrations with external systems including SAP and Commerce Cloud.
+              </p>
+            </FadeIn>
             <FadeIn delay={0.15}>
-              <div className="space-y-5 text-muted-foreground text-lg leading-relaxed">
-                <p>
-                  With 7+ years of hands-on Salesforce development, I've delivered solutions across enterprise Sales, Service, and Experience Cloud implementations. I write Apex that scales, build LWCs that users actually want to use, and architect integrations that keep data flowing reliably.
-                </p>
-                <p>
-                  I hold multiple Salesforce certifications and stay current with every release cycle. Whether it's a greenfield org build, a complex migration, or untangling legacy technical debt — I've seen it and solved it.
-                </p>
+              <div className="grid grid-cols-1 gap-3" data-testid="summary-list">
+                {SUMMARY_POINTS.map((point, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <CheckCircle2 className="w-4 h-4 text-primary mt-1 shrink-0" />
+                    <span className="text-sm text-muted-foreground leading-snug">{point}</span>
+                  </div>
+                ))}
               </div>
               <div className="mt-10 flex gap-4">
-                <a
-                  href="https://github.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:border-primary hover:text-primary transition-colors"
-                  data-testid="link-github"
-                >
-                  <Github className="w-4 h-4" />
-                </a>
                 <a
                   href="https://linkedin.com"
                   target="_blank"
@@ -322,6 +360,15 @@ export default function Home() {
                   data-testid="link-linkedin"
                 >
                   <Linkedin className="w-4 h-4" />
+                </a>
+                <a
+                  href="https://github.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:border-primary hover:text-primary transition-colors"
+                  data-testid="link-github"
+                >
+                  <Github className="w-4 h-4" />
                 </a>
                 <a
                   href="mailto:hello@example.com"
@@ -342,13 +389,13 @@ export default function Home() {
           <FadeIn>
             <div className="flex items-center gap-3 mb-6">
               <div className="h-px bg-primary w-10" />
-              <span className="text-primary text-xs font-semibold uppercase tracking-widest">Expertise</span>
+              <span className="text-primary text-xs font-semibold uppercase tracking-widest">Technologies & Skills</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4 max-w-2xl">
-              What I bring to every Salesforce project
+              Full-stack Salesforce expertise
             </h2>
             <p className="text-muted-foreground text-lg mb-16 max-w-xl">
-              A full-stack Salesforce skill set — from declarative automations to production-grade custom development.
+              From declarative automation to custom Apex development, REST integrations, and Lightning UI.
             </p>
           </FadeIn>
 
@@ -359,11 +406,21 @@ export default function Home() {
                   className="group p-8 bg-card border border-border rounded-2xl hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300"
                   data-testid={`skill-card-${index}`}
                 >
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
                     <skill.icon className="w-5 h-5 text-primary group-hover:text-primary-foreground transition-colors" />
                   </div>
                   <h3 className="text-lg font-semibold font-serif mb-3">{skill.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{skill.description}</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-5">{skill.description}</p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {skill.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-[11px] bg-primary/8 text-primary border border-primary/15 rounded-full px-2.5 py-0.5 font-medium"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </FadeIn>
             ))}
@@ -377,21 +434,24 @@ export default function Home() {
           <FadeIn>
             <div className="flex items-center gap-3 mb-6">
               <div className="h-px bg-primary w-10" />
-              <span className="text-primary text-xs font-semibold uppercase tracking-widest">Selected Work</span>
+              <span className="text-primary text-xs font-semibold uppercase tracking-widest">Projects</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-serif font-bold mb-20">
-              Projects that made a difference
+            <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4">
+              CRM implementations that delivered
             </h2>
+            <p className="text-background/60 text-lg mb-20 max-w-xl">
+              4 enterprise Salesforce projects across Honda, Sapphire Retail, Associated Press, and Loangility.
+            </p>
           </FadeIn>
 
-          <div className="space-y-28">
+          <div className="space-y-24">
             {PROJECTS.map((project, index) => (
               <div
                 key={index}
                 className={`flex flex-col ${index % 2 !== 0 ? "md:flex-row-reverse" : "md:flex-row"} gap-12 md:gap-20 items-center group`}
                 data-testid={`project-card-${index}`}
               >
-                <div className="w-full md:w-7/12 overflow-hidden rounded-2xl">
+                <div className="w-full md:w-1/2 overflow-hidden rounded-2xl">
                   <FadeIn delay={0.1}>
                     <div className="aspect-[16/10] overflow-hidden relative rounded-2xl bg-background/5">
                       <img
@@ -404,36 +464,38 @@ export default function Home() {
                   </FadeIn>
                 </div>
 
-                <div className="w-full md:w-5/12">
+                <div className="w-full md:w-1/2">
                   <FadeIn delay={0.2}>
-                    <div className="flex items-center gap-3 text-xs tracking-widest uppercase mb-5 text-muted font-medium">
+                    <div className="flex items-center gap-3 text-xs tracking-widest uppercase mb-4 text-background/50 font-medium">
                       <span>{project.year}</span>
                       <span className="w-1 h-1 rounded-full bg-primary" />
                       <span>{project.category}</span>
                     </div>
                     <h3 className="text-3xl md:text-4xl font-serif font-bold mb-5">{project.title}</h3>
-                    <p className="text-background/70 text-base mb-8 leading-relaxed">
+                    <p className="text-background/65 text-base mb-7 leading-relaxed">
                       {project.description}
                     </p>
-                    <div className="flex flex-wrap gap-2 mb-8">
+
+                    <div className="space-y-2 mb-7">
+                      {project.highlights.map((h) => (
+                        <div key={h} className="flex items-start gap-2">
+                          <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                          <span className="text-sm text-background/70">{h}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="flex flex-wrap gap-2">
                       {project.tags.map((tag) => (
                         <Badge
                           key={tag}
                           variant="outline"
-                          className="border-background/20 text-background/70 text-xs rounded-full px-3"
+                          className="border-background/20 text-background/60 text-xs rounded-full px-3"
                         >
                           {tag}
                         </Badge>
                       ))}
                     </div>
-                    <a
-                      href="#"
-                      className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors group/link"
-                      data-testid={`project-link-${index}`}
-                    >
-                      View Case Study
-                      <ExternalLink className="w-4 h-4 transform group-hover/link:translate-x-1 transition-transform" />
-                    </a>
                   </FadeIn>
                 </div>
               </div>
@@ -442,42 +504,39 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Experience */}
-      <section id="experience" className="py-32 px-6 md:px-12 border-t border-border/50 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[50vw] h-[50vw] rounded-full bg-primary/3 blur-[150px] pointer-events-none" />
-        <div className="max-w-5xl mx-auto relative z-10">
+      {/* Certifications */}
+      <section id="certifications" className="py-32 px-6 md:px-12 border-t border-border/50">
+        <div className="max-w-7xl mx-auto">
           <FadeIn>
             <div className="flex items-center gap-3 mb-6">
               <div className="h-px bg-primary w-10" />
-              <span className="text-primary text-xs font-semibold uppercase tracking-widest">Journey</span>
+              <span className="text-primary text-xs font-semibold uppercase tracking-widest">Certifications</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-serif font-bold mb-20">Career Timeline</h2>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4">
+              Salesforce Certified
+            </h2>
+            <p className="text-muted-foreground text-lg mb-16 max-w-xl">
+              5 active Salesforce certifications across administration, development, and consulting tracks.
+            </p>
           </FadeIn>
 
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-border/60 md:-translate-x-px" />
-
-            <div className="space-y-16">
-              {EXPERIENCE.map((exp, index) => (
-                <FadeIn key={index} delay={index * 0.1}>
-                  <div className={`relative flex flex-col ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"} gap-8 md:gap-16 items-start md:items-center pl-8 md:pl-0`}>
-                    {/* Dot */}
-                    <div className="absolute left-0 md:left-1/2 top-1 md:top-1/2 w-5 h-5 rounded-full border-4 border-primary bg-background md:-translate-x-1/2 md:-translate-y-1/2 z-10" />
-
-                    <div className={`w-full md:w-[calc(50%-2.5rem)] ${index % 2 === 0 ? "md:text-right" : ""}`} data-testid={`exp-item-${index}`}>
-                      <span className="text-xs font-semibold text-primary uppercase tracking-widest">{exp.period}</span>
-                      <h4 className="text-xl font-serif font-bold mt-1">{exp.company}</h4>
-                    </div>
-
-                    <div className="w-full md:w-[calc(50%-2.5rem)]">
-                      <h3 className="text-lg font-semibold mb-2">{exp.role}</h3>
-                      <p className="text-muted-foreground leading-relaxed text-sm">{exp.description}</p>
-                    </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {CERT_DETAILS.map((cert, index) => (
+              <FadeIn key={cert.name} delay={index * 0.08}>
+                <div
+                  className="flex items-center gap-5 p-6 bg-card border border-border rounded-2xl hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300"
+                  data-testid={`cert-card-${index}`}
+                >
+                  <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center shrink-0">
+                    <Award className="w-7 h-7 text-primary" />
                   </div>
-                </FadeIn>
-              ))}
-            </div>
+                  <div>
+                    <p className="font-semibold font-serif text-foreground leading-snug">{cert.name}</p>
+                    <p className="text-xs text-muted-foreground mt-1">Salesforce Certified</p>
+                  </div>
+                </div>
+              </FadeIn>
+            ))}
           </div>
         </div>
       </section>
@@ -496,7 +555,7 @@ export default function Home() {
                 <span className="text-primary">on Salesforce.</span>
               </h2>
               <p className="text-xl text-muted-foreground mb-12 max-w-md leading-relaxed">
-                Looking for a senior Salesforce developer for your next project or team? I'd love to hear what you're working on.
+                Looking for a Salesforce developer for your next project? I'd love to hear what you're working on and how I can help.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
@@ -504,11 +563,11 @@ export default function Home() {
                     <Mail className="w-4 h-4 text-primary" />
                   </div>
                   <a
-                    href="mailto:hello@sfdev.example.com"
+                    href="mailto:hello@example.com"
                     className="text-base hover:text-primary transition-colors"
                     data-testid="link-email-contact"
                   >
-                    hello@sfdev.example.com
+                    hello@example.com
                   </a>
                 </div>
                 <div className="flex items-center gap-4">
@@ -553,7 +612,7 @@ export default function Home() {
                   <label htmlFor="subject" className="text-sm font-medium">Project Type</label>
                   <Input
                     id="subject"
-                    placeholder="e.g. LWC Development, Org Implementation, Integration"
+                    placeholder="e.g. Sales Cloud, LWC Development, Integration"
                     className="border-border bg-background focus-visible:ring-primary"
                     data-testid="input-subject"
                   />
@@ -592,7 +651,7 @@ export default function Home() {
           <div className="flex gap-6 text-sm font-medium">
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">LinkedIn</a>
             <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">GitHub</a>
-            <a href="mailto:hello@sfdev.example.com" className="hover:text-primary transition-colors">Email</a>
+            <a href="mailto:hello@example.com" className="hover:text-primary transition-colors">Email</a>
           </div>
         </div>
       </footer>
