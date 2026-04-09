@@ -98,7 +98,7 @@ const PROJECTS = [
     category: "Service Cloud",
     description:
       "Service Cloud implementation for retail CRM with multi-channel case management, Commerce Cloud integration, and advanced order management processes.",
-    image: "/images/project-sapphire.png",
+    image: "/images/project-sapphire.jpg",
     tags: ["Service Cloud", "REST APIs", "Commerce Cloud", "OMS", "Apex", "Data Migration"],
     highlights: [
       "Customized core Service Cloud objects (Accounts, Contacts, Cases) for customer service workflows",
@@ -232,15 +232,14 @@ export default function Home() {
   };
 
   return (
-    <div className="bg-background min-h-screen text-foreground">
-
+    <>
       {/* Progress bar */}
       <motion.div
         className="fixed top-0 left-0 h-[3px] bg-primary z-[100] origin-left"
         style={{ scaleX: scrollYProgress }}
       />
 
-      {/* Navigation */}
+      {/* Navigation — outside all content containers so position:fixed is never broken */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/60">
         <div className="max-w-7xl mx-auto px-6 md:px-12 h-16 flex justify-between items-center">
           <button
@@ -272,6 +271,8 @@ export default function Home() {
           </Button>
         </div>
       </header>
+
+      <div className="bg-background min-h-screen text-foreground">
 
       {/* Hero */}
       <section id="hero" className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
@@ -354,7 +355,7 @@ export default function Home() {
               <div className="relative">
                 <div className="aspect-[4/5] overflow-hidden rounded-2xl">
                   <img
-                    src="/images/profile.png"
+                    src="/images/profile-v2.png"
                     alt="Salesforce Developer"
                     className="object-cover w-full h-full hover:scale-105 transition-transform duration-700"
                     data-testid="img-profile"
@@ -755,5 +756,6 @@ export default function Home() {
         </div>
       </footer>
     </div>
+    </>
   );
 }
