@@ -1,11 +1,10 @@
 uploads = []
-outputs = []
 
 [[generated]]
 id = "jfSkxSv50S4uyIiKxTxyJ"
 uri = "file://artifacts/portfolio/public/images/profile.png"
 type = "image"
-title = "Creative developer profile avatar"
+title = "generated_image"
 
 [[generated]]
 id = "T0tNHvlb6NmTvw8QpVRqA"
@@ -24,3 +23,21 @@ id = "7BVDf3nh8TvmZfLuxyO2p"
 uri = "file://artifacts/portfolio/public/images/project-3.png"
 type = "image"
 title = "Data visualization dashboard"
+
+[[outputs]]
+id = "dyuLCNyhq26oPLmVURX-a"
+uri = "file://attached_assets/stock_images/sapphire_retail.jpg"
+type = "image"
+title = "Sapphire fashion retail store brand luxury clothing boutique"
+
+[[outputs]]
+id = "7GvlgzmEbTp0UZfr-JQAj"
+uri = "file://attached_assets/stock_images/honda_brand.jpg"
+type = "image"
+title = "Honda car brand dealership showroom with modern Honda vehicles"
+
+[[outputs]]
+id = "9JVqsTcVe9JuXI0QaIhDo"
+uri = "file://attached_assets/stock_images/ap_news_media.jpg"
+type = "image"
+title = "Associated Press AP news media journalism newsroom professional"

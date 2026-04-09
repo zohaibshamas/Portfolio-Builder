@@ -81,7 +81,7 @@ const PROJECTS = [
     category: "Sales Cloud & Experience Cloud",
     description:
       "Salesforce CRM implementation for Honda focused on Sales Cloud and Partner Community, enabling collaboration between internal teams and dealer networks with real-time SAP integration.",
-    image: "/images/project-1.png",
+    image: "/images/project-honda.jpg",
     tags: ["Sales Cloud", "Experience Cloud", "LWC", "SAP Integration", "Apex", "Sharing Rules"],
     highlights: [
       "Designed and implemented Partner Community for dealer collaboration and visibility into leads, opportunities, and sales",
@@ -98,7 +98,7 @@ const PROJECTS = [
     category: "Service Cloud",
     description:
       "Service Cloud implementation for retail CRM with multi-channel case management, Commerce Cloud integration, and advanced order management processes.",
-    image: "/images/project-2.png",
+    image: "/images/project-sapphire.jpg",
     tags: ["Service Cloud", "REST APIs", "Commerce Cloud", "OMS", "Apex", "Data Migration"],
     highlights: [
       "Customized core Service Cloud objects (Accounts, Contacts, Cases) for customer service workflows",
@@ -123,7 +123,7 @@ const PROJECTS = [
     category: "Experience Cloud",
     description:
       "Experience Cloud self-service portal enabling users to manage cases and access knowledge articles with secure access and structured deployments.",
-    image: "/images/project-3.png",
+    image: "/images/project-ap.jpg",
     tags: ["Experience Cloud", "LWC", "Self-Service", "Knowledge", "QA", "Deployment"],
     highlights: [
       "Implemented self-service portal for case management and knowledge access",
