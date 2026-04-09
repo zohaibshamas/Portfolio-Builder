@@ -343,23 +343,6 @@ export default function Home() {
             </Button>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1.0 }}
-            className="mt-16 flex flex-wrap items-center justify-center gap-2"
-            data-testid="cert-badges"
-          >
-            {CERTIFICATIONS.map((cert) => (
-              <span
-                key={cert}
-                className="inline-flex items-center gap-1.5 bg-secondary border border-border rounded-full px-3 py-1 text-xs font-medium text-muted-foreground"
-              >
-                <Award className="w-3 h-3 text-primary" />
-                {cert}
-              </span>
-            ))}
-          </motion.div>
         </motion.div>
       </section>
 
