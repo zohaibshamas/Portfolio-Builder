@@ -24,6 +24,18 @@ uri = "file://artifacts/portfolio/public/images/project-3.png"
 type = "image"
 title = "Data visualization dashboard"
 
+[[generated]]
+id = "hvNYd-zBC7QZTPPJiLvMo"
+uri = "file://artifacts/portfolio/public/images/project-sapphire.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "X3i5xNaLzyi-kJNx5Dza1"
+uri = "file://artifacts/portfolio/public/images/project-ap.png"
+type = "image"
+title = "generated_image"
+
 [[outputs]]
 id = "dyuLCNyhq26oPLmVURX-a"
 uri = "file://attached_assets/stock_images/sapphire_retail.jpg"
@@ -41,3 +53,21 @@ id = "9JVqsTcVe9JuXI0QaIhDo"
 uri = "file://attached_assets/stock_images/ap_news_media.jpg"
 type = "image"
 title = "Associated Press AP news media journalism newsroom professional"
+
+[[outputs]]
+id = "dlXBRSAQnRxlrI-_3sq2X"
+uri = "file://attached_assets/stock_images/sapphire_fashion_brand.jpg"
+type = "image"
+title = "Sapphire blue luxury fashion brand elegant clothing retail store Pakistan"
+
+[[outputs]]
+id = "IViUB7S2Xd8HcnkhwCsHT"
+uri = "file://attached_assets/stock_images/associated_press_ap_news.jpg"
+type = "image"
+title = "Associated Press AP news wire service journalist breaking news media"
+
+[[outputs]]
+id = "czvivb-3CFpHW3Bew7Q72"
+uri = "file://attached_assets/stock_images/honda_logo_car.jpg"
+type = "image"
+title = "Honda car logo emblem brand front grille red H badge"

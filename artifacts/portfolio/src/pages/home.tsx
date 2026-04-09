@@ -98,7 +98,7 @@ const PROJECTS = [
     category: "Service Cloud",
     description:
       "Service Cloud implementation for retail CRM with multi-channel case management, Commerce Cloud integration, and advanced order management processes.",
-    image: "/images/project-sapphire.jpg",
+    image: "/images/project-sapphire.png",
     tags: ["Service Cloud", "REST APIs", "Commerce Cloud", "OMS", "Apex", "Data Migration"],
     highlights: [
       "Customized core Service Cloud objects (Accounts, Contacts, Cases) for customer service workflows",
@@ -123,7 +123,7 @@ const PROJECTS = [
     category: "Experience Cloud",
     description:
       "Experience Cloud self-service portal enabling users to manage cases and access knowledge articles with secure access and structured deployments.",
-    image: "/images/project-ap.jpg",
+    image: "/images/project-ap.png",
     tags: ["Experience Cloud", "LWC", "Self-Service", "Knowledge", "QA", "Deployment"],
     highlights: [
       "Implemented self-service portal for case management and knowledge access",
@@ -232,7 +232,7 @@ export default function Home() {
   };
 
   return (
-    <div className="bg-background min-h-screen overflow-x-hidden text-foreground">
+    <div className="bg-background min-h-screen text-foreground">
 
       {/* Progress bar */}
       <motion.div
@@ -493,6 +493,11 @@ export default function Home() {
                         className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-1000 ease-out"
                       />
                       <div className="absolute inset-0 bg-foreground/10 group-hover:bg-transparent transition-colors duration-700 pointer-events-none rounded-2xl" />
+                      <div className="absolute bottom-3 left-3">
+                        <span className="inline-flex items-center gap-1.5 bg-background/90 backdrop-blur-sm border border-border/60 rounded-lg px-3 py-1.5 text-xs font-bold text-foreground shadow-md">
+                          {project.title}
+                        </span>
+                      </div>
                     </div>
                   </FadeIn>
                 </div>
