@@ -355,7 +355,7 @@ export default function Home() {
               <div className="relative">
                 <div className="aspect-[4/5] overflow-hidden rounded-2xl">
                   <img
-                    src="/images/profile-v3.png"
+                    src="/images/profile-v4.png"
                     alt="Salesforce Developer"
                     className="object-cover w-full h-full hover:scale-105 transition-transform duration-700"
                     data-testid="img-profile"

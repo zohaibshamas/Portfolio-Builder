@@ -42,6 +42,12 @@ uri = "file://artifacts/portfolio/public/images/profile-v3.png"
 type = "image"
 title = "generated_image"
 
+[[generated]]
+id = "kYstjNp0664ihz3ad0169"
+uri = "file://artifacts/portfolio/public/images/profile-v4.png"
+type = "image"
+title = "generated_image"
+
 [[outputs]]
 id = "dyuLCNyhq26oPLmVURX-a"
 uri = "file://attached_assets/stock_images/sapphire_retail.jpg"
