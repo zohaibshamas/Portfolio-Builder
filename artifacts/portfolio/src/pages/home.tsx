@@ -187,6 +187,8 @@ export default function Home() {
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
   const [errors, setErrors] = useState<Partial<typeof form>>({});
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [sendError, setSendError] = useState("");
 
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
@@ -198,7 +200,7 @@ export default function Home() {
     if (errors[field]) setErrors((prev) => ({ ...prev, [field]: "" }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const newErrors: Partial<typeof form> = {};
     if (!form.name.trim()) newErrors.name = "Name is required";
@@ -207,13 +209,26 @@ export default function Home() {
     if (!form.message.trim()) newErrors.message = "Message is required";
     if (Object.keys(newErrors).length > 0) { setErrors(newErrors); return; }
 
-    const subject = encodeURIComponent(form.subject || `Portfolio Inquiry from ${form.name}`);
-    const body = encodeURIComponent(
-      `Hi,\n\nYou have a new message from your portfolio:\n\nName: ${form.name}\nEmail: ${form.email}\nProject Type: ${form.subject || "Not specified"}\n\nMessage:\n${form.message}\n\n---\nSent via portfolio contact form`
-    );
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
-    setSent(true);
-    setForm({ name: "", email: "", subject: "", message: "" });
+    setSending(true);
+    setSendError("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const data = await res.json() as { success?: boolean; error?: string };
+      if (!res.ok || !data.success) {
+        setSendError(data.error ?? "Something went wrong. Please try again.");
+        return;
+      }
+      setSent(true);
+      setForm({ name: "", email: "", subject: "", message: "" });
+    } catch {
+      setSendError("Network error. Please check your connection and try again.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -628,9 +643,9 @@ export default function Home() {
                     <CircleCheck className="w-8 h-8 text-primary" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-serif font-bold mb-2">Message Ready to Send</h3>
+                    <h3 className="text-2xl font-serif font-bold mb-2">Message Sent!</h3>
                     <p className="text-muted-foreground">
-                      Your email client has opened with the message pre-filled. Just hit send and I'll get back to you shortly.
+                      Thanks for reaching out. Your message has been delivered and I'll get back to you shortly.
                     </p>
                   </div>
                   <Button
@@ -705,17 +720,30 @@ export default function Home() {
                     />
                     {errors.message && <p className="text-destructive text-xs">{errors.message}</p>}
                   </div>
+                  {sendError && (
+                    <p className="text-destructive text-sm text-center bg-destructive/10 rounded-lg px-4 py-2">{sendError}</p>
+                  )}
                   <Button
                     type="submit"
-                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground h-12 font-semibold text-base rounded-xl gap-2"
+                    disabled={sending}
+                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground h-12 font-semibold text-base rounded-xl gap-2 disabled:opacity-70"
                     data-testid="btn-submit-contact"
                   >
-                    <SendHorizonal className="w-4 h-4" />
-                    Send Message
+                    {sending ? (
+                      <>
+                        <svg className="animate-spin w-4 h-4" viewBox="0 0 24 24" fill="none">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                        </svg>
+                        Sending…
+                      </>
+                    ) : (
+                      <>
+                        <SendHorizonal className="w-4 h-4" />
+                        Send Message
+                      </>
+                    )}
                   </Button>
-                  <p className="text-center text-xs text-muted-foreground">
-                    This will open your email client with the message pre-filled.
-                  </p>
                 </form>
               )}
             </FadeIn>
