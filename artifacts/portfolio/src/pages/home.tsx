@@ -22,26 +22,25 @@ const CERTIFICATIONS = [
 ];
 
 const SUMMARY_POINTS = [
-  "4+ years designing and implementing Salesforce CRM solutions",
-  "Hands-on across Sales Cloud, Service Cloud, and Experience Cloud",
-  "Expert in Apex, LWC, Aura Components, SOQL, and JavaScript",
-  "Salesforce integrations via REST APIs and SAP",
-  "Lead-to-order lifecycle, opportunity management, and sales automation",
-  "Case management, SLA/escalation, and omni-channel Service Cloud support",
-  "Apex Triggers with handler frameworks for scalable automation",
-  "Flows, Process Builder, and declarative automation",
-  "Data migration, transformation, and integrity management",
-  "Test classes with mock callouts and high code coverage",
-  "Deployment using change sets and Salesforce DX best practices",
-  "Agile methodology and cross-functional team collaboration",
+  "Salesforce Developer with 5+ years of experience delivering scalable, high-performance CRM solutions",
+  "Proven expertise across Sales Cloud, Service Cloud, and Experience Cloud implementations",
+  "Strong command of Apex, Lightning Web Components (LWC), Aura, SOQL, and modern JavaScript",
+  "Extensive experience in system integrations using REST APIs, including SAP and third-party platforms",
+  "End-to-end ownership of Lead-to-Order lifecycle, driving efficient sales automation and business growth",
+  "Deep understanding of Service Cloud operations including Case Management and SLA handling",
+  "Architecting robust automation using Apex Triggers with handler frameworks following best practices",
+  "Skilled in declarative development with Flows for optimized business processes",
+  "Expertise in data migration, cleansing, transformation, and maintaining data integrity at scale",
+  "Committed to quality with comprehensive test classes, mock callouts, and high code coverage standards",
+  "Hands-on experience with deployment strategies using Change Sets and Salesforce DX",
+  "Collaborative Agile practitioner with a track record of working effectively in cross-functional teams",
 ];
-
 const SKILLS = [
   {
     icon: Code2,
-    title: "Apex & Backend",
-    tags: ["Apex", "Apex Triggers", "Handler Frameworks", "Test Classes", "Mock Callouts", "Async Apex"],
-    description: "Scalable, bulkified Apex development including triggers, batch jobs, and handler patterns. High code coverage with mock callout strategies.",
+    title: "Apex & Backend Engineering",
+    tags: ["Apex", "Triggers", "Handler Frameworks", "Async Apex", "Batch Jobs", "Queueable", "Test Classes", "Mock Callouts"],
+    description: "Design and development of scalable, bulkified Apex solutions using industry-standard patterns. Expertise in asynchronous processing, robust trigger frameworks, and high-quality test coverage with mock integrations.",
   },
   {
     icon: Layers,
@@ -78,64 +77,79 @@ const SKILLS = [
 const PROJECTS = [
   {
     title: "Honda CRM",
-    category: "Sales Cloud & Partner Community",
+    category: "Sales Cloud & Experience Cloud",
     description:
-      "Designed and implemented the Salesforce Partner Community for Honda, enabling seamless collaboration between Honda and its dealer network. Built custom LWC components for sales performance tracking and reporting. Integrated Salesforce with Honda's SAP systems for real-time data sync and configured sharing rules for secure partner data access.",
+      "Salesforce CRM implementation for Honda focused on Sales Cloud and Partner Community, enabling collaboration between internal teams and dealer networks with real-time SAP integration.",
     image: "/images/project-1.png",
-    tags: ["Sales Cloud", "Partner Community", "LWC", "SAP Integration", "Sharing Rules", "Apex"],
+    tags: ["Sales Cloud", "Experience Cloud", "LWC", "SAP Integration", "Apex", "Sharing Rules"],
     highlights: [
-      "Salesforce Partner Community for Honda dealer network",
-      "Custom LWC order creation interfaces",
-      "Real-time SAP integration for data accuracy",
-      "Configured sharing rules for structured partner access",
+      "Designed and implemented Partner Community for dealer collaboration and visibility into leads, opportunities, and sales",
+      "Integrated Salesforce with SAP for real-time data synchronization and improved data accuracy",
+      "Customized Sales Cloud to streamline sales processes and automate workflows",
+      "Developed Lightning Web Components for sales tracking, reporting, and account management",
+      "Configured sharing rules for secure and role-based partner data access",
+      "Built custom LWC-based order creation interfaces for enhanced user experience",
     ],
-    year: "Project 1",
+    year: "Enterprise Project",
   },
   {
     title: "Sapphire Retail Limited",
     category: "Service Cloud",
     description:
-      "Full Service Cloud implementation for a retail CRM. Configured Email-to-Case and Web-to-Case for multi-channel case creation. Built REST APIs for Commerce Cloud bi-directional sync and implemented Order Management flows including cancellation, exchange, and returns. Led legacy data migration ensuring full data integrity.",
+      "Service Cloud implementation for retail CRM with multi-channel case management, Commerce Cloud integration, and advanced order management processes.",
     image: "/images/project-2.png",
-    tags: ["Service Cloud", "REST APIs", "Commerce Cloud", "OMS Flows", "Apex Triggers", "Data Migration"],
+    tags: ["Service Cloud", "REST APIs", "Commerce Cloud", "OMS", "Apex", "Data Migration"],
     highlights: [
-      "Email-to-Case and Web-to-Case automation",
-      "Bi-directional Commerce Cloud data sync",
-      "OMS flows: cancellations, exchanges, returns",
-      "Apex Triggers with handler framework",
-      "Led legacy data migration and validation",
+      "Customized core Service Cloud objects (Accounts, Contacts, Cases) for customer service workflows",
+      "Implemented bi-directional integration between Salesforce and Commerce Cloud",
+      "Implemented payment gateway integration to support secure and efficient refund processing",
+      "Configured Email-to-Case and Web-to-Case for automated case creation",
+      "Developed store credit integration logic for seamless financial tracking",
+      "Built and consumed REST APIs for secure external integrations",
+      "Implemented OMS flows including order cancellation, exchange, and returns",
+      "Configured Case Assignment and Escalation Rules for SLA management",
+      "Designed customer segmentation logic for targeted engagement",
+      "Implemented Approval Processes for structured business validations",
+      "Led legacy data migration with transformation and validation",
+      "Developed Apex Triggers with handler framework for scalable automation",
+      "Created test classes with mock callouts ensuring reliable deployments",
+      "Enhanced security using profiles, permission sets, and sharing rules",
     ],
-    year: "Project 2",
+    year: "Enterprise Project",
   },
   {
     title: "Associated Press Portal",
     category: "Experience Cloud",
     description:
-      "Implemented a Self-Service Portal using Experience Cloud, enabling users to manage cases and access knowledge articles independently. Developed custom Lightning components for case creation, self-registration, and knowledge management. Managed QA testing across multiple sandbox environments and deployments via change sets.",
+      "Experience Cloud self-service portal enabling users to manage cases and access knowledge articles with secure access and structured deployments.",
     image: "/images/project-3.png",
-    tags: ["Experience Cloud", "Self-Service Portal", "LWC", "Knowledge Management", "Change Sets", "QA"],
+    tags: ["Experience Cloud", "LWC", "Self-Service", "Knowledge", "QA", "Deployment"],
     highlights: [
-      "Self-service portal with Knowledge article access",
-      "Custom LWC: case creation, self-registration",
-      "Role hierarchy, profiles, and sharing configuration",
-      "QA across multiple sandbox environments",
+      "Implemented self-service portal for case management and knowledge access",
+      "Developed custom Lightning components for case creation, and knowledge management",
+      "Configured role hierarchy, profiles, and sharing settings for secure access",
+      "Performed QA testing across multiple sandbox environments",
+      "Managed deployments using change sets for smooth releases",
     ],
-    year: "Project 3",
+    year: "Platform Project",
   },
   {
     title: "Loangility CRM",
     category: "Sales Cloud",
     description:
-      "Designed and developed reports and dashboards for business stakeholder insights. Automated business processes using Apex Triggers and handler classes. Worked extensively with Leads, Opportunities, Accounts, and Cases. Strengthened data security and access control using profiles, permission sets, and sharing configurations.",
+      "Sales Cloud implementation focused on CRM customization, automation, reporting, and integration with external systems to support business operations.",
     image: "/images/project-1.png",
-    tags: ["Sales Cloud", "Reports & Dashboards", "Apex Triggers", "Leads", "Opportunities", "Permission Sets"],
+    tags: ["Sales Cloud", "Apex", "Reports", "Automation", "Security"],
     highlights: [
-      "Custom reports and dashboards for stakeholders",
-      "Apex Triggers with handler classes",
-      "Customized page layouts, fields, and business processes",
-      "Profiles, permission sets, and sharing configurations",
+      "Integrated Salesforce with Encompass using REST APIs",
+      "Worked with standard and custom objects including Leads, Opportunities, Accounts, and Cases",
+      "Automated business processes using Apex Triggers and handler classes",
+      "Performed unit and end-to-end testing for stable deployments",
+      "Customized UI and data model including page layouts and fields",
+      "Strengthened security using profiles, permission sets, and sharing configurations",
+      "Developed reports and dashboards for actionable business insights",
     ],
-    year: "Project 4",
+    year: "Business Project",
   },
 ];
 
@@ -235,7 +249,7 @@ export default function Home() {
             data-testid="hero-badge"
           >
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            4+ Years of Salesforce Development
+            5+ Years of Salesforce Development
           </motion.div>
 
           <motion.h1
@@ -319,7 +333,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="absolute -bottom-5 -right-5 bg-primary text-primary-foreground rounded-2xl px-5 py-4 shadow-xl">
-                  <p className="text-3xl font-bold font-serif leading-none">4+</p>
+                  <p className="text-3xl font-bold font-serif leading-none">5+</p>
                   <p className="text-xs font-medium opacity-90 mt-1">Years Salesforce</p>
                 </div>
               </div>
@@ -339,7 +353,7 @@ export default function Home() {
             </FadeIn>
             <FadeIn delay={0.1}>
               <p className="text-muted-foreground text-lg leading-relaxed mb-10">
-                Salesforce Developer with 4+ years of experience designing and implementing CRM solutions. Strong hands-on expertise across Sales Cloud, Service Cloud, and Experience Cloud — from lead-to-order automation to self-service portals and REST API integrations with external systems including SAP and Commerce Cloud.
+                Salesforce Developer with 5+ years of experience designing and implementing CRM solutions. Strong hands-on expertise across Sales Cloud, Service Cloud, and Experience Cloud — from lead-to-order automation to self-service portals and REST API integrations with external systems including SAP and Commerce Cloud.
               </p>
             </FadeIn>
             <FadeIn delay={0.15}>
@@ -353,7 +367,7 @@ export default function Home() {
               </div>
               <div className="mt-10 flex gap-4">
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/zohaib-shamas-546553218/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:border-primary hover:text-primary transition-colors"
@@ -362,16 +376,7 @@ export default function Home() {
                   <Linkedin className="w-4 h-4" />
                 </a>
                 <a
-                  href="https://github.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:border-primary hover:text-primary transition-colors"
-                  data-testid="link-github"
-                >
-                  <Github className="w-4 h-4" />
-                </a>
-                <a
-                  href="mailto:hello@example.com"
+                  href="mailto:zohaibshamas3@gmai.com"
                   className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:border-primary hover:text-primary transition-colors"
                   data-testid="link-email-about"
                 >
@@ -563,11 +568,11 @@ export default function Home() {
                     <Mail className="w-4 h-4 text-primary" />
                   </div>
                   <a
-                    href="mailto:hello@example.com"
+                    href="mailto:zohaibshamas3@gmail.com"
                     className="text-base hover:text-primary transition-colors"
                     data-testid="link-email-contact"
                   >
-                    hello@example.com
+                    zohaibshamas3@gmail.com
                   </a>
                 </div>
                 <div className="flex items-center gap-4">
@@ -649,9 +654,8 @@ export default function Home() {
             &copy; {new Date().getFullYear()} Salesforce Developer Portfolio. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm font-medium">
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">LinkedIn</a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">GitHub</a>
-            <a href="mailto:hello@example.com" className="hover:text-primary transition-colors">Email</a>
+            <a href="https://www.linkedin.com/in/zohaib-shamas-546553218/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">LinkedIn</a>
+            <a href="mailto:zohaibshamas3@gmail.com" className="hover:text-primary transition-colors">Email</a>
           </div>
         </div>
       </footer>
