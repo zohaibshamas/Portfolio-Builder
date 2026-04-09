@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-import { ArrowRight, Github, Linkedin, Mail, Cloud, Code2, Database, GitBranch, Layers, Settings2, Award, MapPin, ExternalLink, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Mail, Cloud, Code2, Database, GitBranch, Layers, Settings2, Award, MapPin, ExternalLink, CheckCircle2, SendHorizonal, CircleCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -175,15 +176,44 @@ function FadeIn({ children, delay = 0, className = "" }: { children: React.React
   );
 }
 
+const CONTACT_EMAIL = "zohaibshamas3@gmail.com";
+
 export default function Home() {
   const { scrollYProgress } = useScroll();
   const smoothProgress = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
   const heroY = useTransform(smoothProgress, [0, 1], ["0%", "40%"]);
   const heroOpacity = useTransform(smoothProgress, [0, 0.25], [1, 0]);
 
+  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
+  const [errors, setErrors] = useState<Partial<typeof form>>({});
+  const [sent, setSent] = useState(false);
+
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleChange = (field: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm((prev) => ({ ...prev, [field]: e.target.value }));
+    if (errors[field]) setErrors((prev) => ({ ...prev, [field]: "" }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const newErrors: Partial<typeof form> = {};
+    if (!form.name.trim()) newErrors.name = "Name is required";
+    if (!form.email.trim()) newErrors.email = "Email is required";
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) newErrors.email = "Enter a valid email";
+    if (!form.message.trim()) newErrors.message = "Message is required";
+    if (Object.keys(newErrors).length > 0) { setErrors(newErrors); return; }
+
+    const subject = encodeURIComponent(form.subject || `Portfolio Inquiry from ${form.name}`);
+    const body = encodeURIComponent(
+      `Hi,\n\nYou have a new message from your portfolio:\n\nName: ${form.name}\nEmail: ${form.email}\nProject Type: ${form.subject || "Not specified"}\n\nMessage:\n${form.message}\n\n---\nSent via portfolio contact form`
+    );
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+    setSent(true);
+    setForm({ name: "", email: "", subject: "", message: "" });
   };
 
   return (
@@ -587,58 +617,107 @@ export default function Home() {
 
           <div className="w-full md:w-1/2">
             <FadeIn delay={0.2}>
-              <form
-                className="bg-card border border-border rounded-2xl p-8 md:p-10 space-y-6 shadow-xl shadow-black/5"
-                onSubmit={(e) => e.preventDefault()}
-                data-testid="contact-form"
-              >
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                  <div className="space-y-2">
-                    <label htmlFor="name" className="text-sm font-medium">Name</label>
-                    <Input
-                      id="name"
-                      placeholder="Your Name"
-                      className="border-border bg-background focus-visible:ring-primary"
-                      data-testid="input-name"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="email" className="text-sm font-medium">Email</label>
-                    <Input
-                      id="email"
-                      type="email"
-                      placeholder="you@company.com"
-                      className="border-border bg-background focus-visible:ring-primary"
-                      data-testid="input-email"
-                    />
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="subject" className="text-sm font-medium">Project Type</label>
-                  <Input
-                    id="subject"
-                    placeholder="e.g. Sales Cloud, LWC Development, Integration"
-                    className="border-border bg-background focus-visible:ring-primary"
-                    data-testid="input-subject"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm font-medium">Tell me about your project</label>
-                  <Textarea
-                    id="message"
-                    placeholder="Describe your Salesforce project, current challenges, or what you need built..."
-                    className="border-border bg-background focus-visible:ring-primary min-h-[130px] resize-none"
-                    data-testid="textarea-message"
-                  />
-                </div>
-                <Button
-                  type="submit"
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground h-12 font-semibold text-base rounded-xl"
-                  data-testid="btn-submit-contact"
+              {sent ? (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="bg-card border border-primary/30 rounded-2xl p-10 text-center shadow-xl shadow-black/5 flex flex-col items-center gap-5"
+                  data-testid="contact-success"
                 >
-                  Send Message
-                </Button>
-              </form>
+                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
+                    <CircleCheck className="w-8 h-8 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-serif font-bold mb-2">Message Ready to Send</h3>
+                    <p className="text-muted-foreground">
+                      Your email client has opened with the message pre-filled. Just hit send and I'll get back to you shortly.
+                    </p>
+                  </div>
+                  <Button
+                    onClick={() => setSent(false)}
+                    variant="outline"
+                    className="rounded-full px-6 mt-2 border-border hover:border-primary hover:text-primary"
+                    data-testid="btn-send-another"
+                  >
+                    Send Another Message
+                  </Button>
+                </motion.div>
+              ) : (
+                <form
+                  className="bg-card border border-border rounded-2xl p-8 md:p-10 space-y-6 shadow-xl shadow-black/5"
+                  onSubmit={handleSubmit}
+                  noValidate
+                  data-testid="contact-form"
+                >
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div className="space-y-2">
+                      <label htmlFor="name" className="text-sm font-medium">
+                        Name <span className="text-destructive">*</span>
+                      </label>
+                      <Input
+                        id="name"
+                        placeholder="Your Name"
+                        value={form.name}
+                        onChange={handleChange("name")}
+                        className={`border-border bg-background focus-visible:ring-primary ${errors.name ? "border-destructive" : ""}`}
+                        data-testid="input-name"
+                      />
+                      {errors.name && <p className="text-destructive text-xs">{errors.name}</p>}
+                    </div>
+                    <div className="space-y-2">
+                      <label htmlFor="email" className="text-sm font-medium">
+                        Email <span className="text-destructive">*</span>
+                      </label>
+                      <Input
+                        id="email"
+                        type="email"
+                        placeholder="you@company.com"
+                        value={form.email}
+                        onChange={handleChange("email")}
+                        className={`border-border bg-background focus-visible:ring-primary ${errors.email ? "border-destructive" : ""}`}
+                        data-testid="input-email"
+                      />
+                      {errors.email && <p className="text-destructive text-xs">{errors.email}</p>}
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <label htmlFor="subject" className="text-sm font-medium">Project Type</label>
+                    <Input
+                      id="subject"
+                      placeholder="e.g. Sales Cloud, LWC Development, Integration"
+                      value={form.subject}
+                      onChange={handleChange("subject")}
+                      className="border-border bg-background focus-visible:ring-primary"
+                      data-testid="input-subject"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label htmlFor="message" className="text-sm font-medium">
+                      Message <span className="text-destructive">*</span>
+                    </label>
+                    <Textarea
+                      id="message"
+                      placeholder="Describe your Salesforce project, current challenges, or what you need built..."
+                      value={form.message}
+                      onChange={handleChange("message")}
+                      className={`border-border bg-background focus-visible:ring-primary min-h-[130px] resize-none ${errors.message ? "border-destructive" : ""}`}
+                      data-testid="textarea-message"
+                    />
+                    {errors.message && <p className="text-destructive text-xs">{errors.message}</p>}
+                  </div>
+                  <Button
+                    type="submit"
+                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground h-12 font-semibold text-base rounded-xl gap-2"
+                    data-testid="btn-submit-contact"
+                  >
+                    <SendHorizonal className="w-4 h-4" />
+                    Send Message
+                  </Button>
+                  <p className="text-center text-xs text-muted-foreground">
+                    This will open your email client with the message pre-filled.
+                  </p>
+                </form>
+              )}
             </FadeIn>
           </div>
         </div>
