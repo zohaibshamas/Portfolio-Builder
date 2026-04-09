@@ -355,7 +355,7 @@ export default function Home() {
               <div className="relative">
                 <div className="aspect-[4/5] overflow-hidden rounded-2xl">
                   <img
-                    src="/images/profile-v2.png"
+                    src="/images/profile-v3.png"
                     alt="Salesforce Developer"
                     className="object-cover w-full h-full hover:scale-105 transition-transform duration-700"
                     data-testid="img-profile"
@@ -494,11 +494,6 @@ export default function Home() {
                         className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-1000 ease-out"
                       />
                       <div className="absolute inset-0 bg-foreground/10 group-hover:bg-transparent transition-colors duration-700 pointer-events-none rounded-2xl" />
-                      <div className="absolute bottom-3 left-3">
-                        <span className="inline-flex items-center gap-1.5 bg-background/90 backdrop-blur-sm border border-border/60 rounded-lg px-3 py-1.5 text-xs font-bold text-foreground shadow-md">
-                          {project.title}
-                        </span>
-                      </div>
                     </div>
                   </FadeIn>
                 </div>
