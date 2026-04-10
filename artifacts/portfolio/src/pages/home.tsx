@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { ArrowRight, Github, Linkedin, Mail, Cloud, Code2, Database, GitBranch, Layers, Settings2, Award, MapPin, ExternalLink, CheckCircle2, SendHorizonal, CircleCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -184,6 +184,15 @@ export default function Home() {
   const heroY = useTransform(smoothProgress, [0, 1], ["0%", "40%"]);
   const heroOpacity = useTransform(smoothProgress, [0, 0.25], [1, 0]);
 
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 768px)");
+    setIsMobile(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
+
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
   const [errors, setErrors] = useState<Partial<typeof form>>({});
   const [sent, setSent] = useState(false);
@@ -240,7 +249,7 @@ export default function Home() {
       />
 
       {/* Navigation — outside all content containers so position:fixed is never broken */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/60">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/60 [will-change:transform] [transform:translateZ(0)]">
         <div className="max-w-7xl mx-auto px-6 md:px-12 h-16 flex justify-between items-center">
           <button
             onClick={() => scrollTo("hero")}
@@ -286,7 +295,7 @@ export default function Home() {
         <div className="absolute top-1/4 left-1/4 w-[40vw] h-[40vw] rounded-full bg-primary/8 blur-[120px] pointer-events-none" />
         <div className="absolute bottom-1/4 right-1/4 w-[30vw] h-[30vw] rounded-full bg-primary/5 blur-[100px] pointer-events-none" />
 
-        <motion.div style={{ y: heroY, opacity: heroOpacity }} className="relative z-10 max-w-5xl mx-auto text-center pt-24">
+        <motion.div style={{ y: isMobile ? 0 : heroY, opacity: isMobile ? 1 : heroOpacity }} className="relative z-10 max-w-5xl mx-auto text-center pt-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
