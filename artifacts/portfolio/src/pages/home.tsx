@@ -350,7 +350,7 @@ export default function Home() {
       {/* About */}
       <section id="about" className="py-32 px-6 md:px-12 bg-secondary/40 border-t border-border/50">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-16 md:gap-24 items-start">
-          <div className="w-full md:w-5/12 sticky top-24">
+          <div className="w-full md:w-5/12 md:sticky md:top-24">
             <FadeIn>
               <div className="relative">
                 <div className="aspect-[4/5] overflow-hidden rounded-2xl">
